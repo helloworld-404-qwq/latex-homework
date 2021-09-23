@@ -32,12 +32,14 @@
 % scale=.94     scales size to roughly match Libertinus's x-height
 % varqu         replaces slanted by upright quotes (for code)
 \RequirePackage[extrasp=0pt, mono, scale=.94, varqu]{inconsolata}
+\RequirePackage{xeCJK}
+\setCJKmainfont{宋体-简}
 
 % mono=false   disables Libertinus Mono (which would replace Inconsolata)
-\RequirePackage[mono=false]{libertinus-type1}
+% \RequirePackage[mono=false]{libertinus-fonts}
 
 % lcgreekalpha  enables e.g. \mathbf for lower case Greek letters
-\RequirePackage[lcgreekalpha]{libertinust1math}
+% \RequirePackage[lcgreekalpha]{libertinust1math}
 
 % (using tex.stackexchange.com/a/254626 and fonttable package)
 \DeclareFontEncoding{LS1}{}{}
@@ -53,9 +55,9 @@
 % from ltsect.dtx and modified. Since hyperref also redefines them (to make the
 % pdfusetitle option work, among others), we do it before hyperref is loaded.
 % TODO: could be applied to sections as well
-\DeclareRobustCommand\title[1]{\gdef\@title{\LibertinusDisplay#1}}
-\DeclareRobustCommand*\author[1]{\gdef\@author{\LibertinusDisplay#1}}
-\DeclareRobustCommand*\date[1]{\gdef\@date{\LibertinusDisplay#1}}
+% \DeclareRobustCommand\title[1]{\gdef\@title{\LibertinusDisplay#1}}
+% \DeclareRobustCommand*\author[1]{\gdef\@author{\LibertinusDisplay#1}}
+% \DeclareRobustCommand*\date[1]{\gdef\@date{\LibertinusDisplay#1}}
 \date\today % reinitializes \date with default value, so correct font is used
 
 
@@ -129,7 +131,7 @@
 \renewcommand*{\vcentcolon}{\!:\!}                                      % both vertical and horizontal spacing is off!
 \DeclareMathSymbol{\coloneqq}{\mathrel}{symbols}{"65}                   % :=
 \DeclareMathSymbol{\eqqcolon}{\mathrel}{symbols}{"66}                   % =:
-\renewcommand*{\coloneq}{\vcentcolon\mathrel{\mkern-1.2mu}\mathrel{-}}  % :-  (missing in Libertinus)
+% \renewcommand*{\coloneq}{\vcentcolon\mathrel{\mkern-1.2mu}\mathrel{-}}  % :-  (missing in Libertinus)
 \DeclareMathSymbol{\eqcolon}{\mathrel}{operators}{"EA}                  % -:
 
 % Without this patch, there is too much vertical spacing above and below the
@@ -152,8 +154,8 @@
 \DeclareMathSymbol{*}{\mathbin}{symbols}{"0C}
 
 % swaps definition of \epsilon and \varepsilon
-\DeclareMathSymbol{\epsilon}{\libus@lcgc}{letters}{"22}
-\DeclareMathSymbol{\varepsilon}{\libus@lcgc}{operators}{"0F}
+% \DeclareMathSymbol{\epsilon}{\libus@lcgc}{letters}{"22}
+% \DeclareMathSymbol{\varepsilon}{\libus@lcgc}{operators}{"0F}
 
 % imports blackboard 1 from stix2 (missing in Libertinus)
 \DeclareMathSymbol{\@bbone}{\mathord}{stix2-symbols3}{"31}
@@ -194,7 +196,7 @@
     \def\@arg{#1}%
     \begingroup\edef\x{\endgroup% expands exercise counter for \nameref: tex.stackexchange.com/a/569405
         \noexpand\@exercisesection{%
-            \exercisename{} % note: space
+            % \exercisename{} % note: space
             \ifx\@arg\@nnil\the\numexpr\value{exercise}+1\else#1\fi%
         }%
     }\x%
@@ -292,4 +294,4 @@
 \newcommand*{\Z}{\mathbb Z}
 \newcommand*{\Q}{\mathbb Q}
 \newcommand*{\R}{\mathbb R}
-\newcommand*{\C}{\mathbb C}
+% \newcommand*{\C}{\mathbb C}
