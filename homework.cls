@@ -58,8 +58,8 @@
 % \DeclareRobustCommand\title[1]{\gdef\@title{\LibertinusDisplay#1}}
 % \DeclareRobustCommand*\author[1]{\gdef\@author{\LibertinusDisplay#1}}
 % \DeclareRobustCommand*\date[1]{\gdef\@date{\LibertinusDisplay#1}}
-\date\today % reinitializes \date with default value, so correct font is used
-
+% \date\today % reinitializes \date with default value, so correct font is used
+\date{}
 
 % --------[ PACKAGES: LANGUAGE ]------------------------------------------------
 
