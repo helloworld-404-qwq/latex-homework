@@ -204,7 +204,7 @@
 \newcommand*{\exercise}{\@ifstar{%
     \@exercise%
 }{%
-    \ifnum\theexercise>0\newpage\fi%
+    % \ifnum\theexercise>0\newpage\fi%
     \@exercise%
 }}
 
